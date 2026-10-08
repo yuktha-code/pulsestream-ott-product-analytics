@@ -1,0 +1,32 @@
+{
+  "summary": {
+    "total_users": 10000.0,
+    "total_watch_sessions": 160000.0,
+    "avg_watch_minutes": 55.15,
+    "avg_completion_rate": 0.5813,
+    "avg_buffering_ratio": 0.0194
+  },
+  "recommendation_funnel": {
+    "impressions": 120000.0,
+    "clicks": 18218.0,
+    "plays": 13746.0,
+    "ctr": 0.1518,
+    "play_rate": 0.1145
+  },
+  "search_funnel": {
+    "searches": 45000.0,
+    "clicks": 26513.0,
+    "plays": 19157.0,
+    "search_ctr": 0.5892,
+    "search_to_play": 0.4257
+  },
+  "revenue": {
+    "successful_revenue_inr": 13308967.0,
+    "paying_users": 7167.0,
+    "arppu_inr": 1856.98
+  },
+  "stickiness": {
+    "mean_dau_mau": 0.1391238095238095,
+    "latest_month_dau_mau": 0.061
+  }
+}

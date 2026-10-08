@@ -1,0 +1,12 @@
+PRAGMA foreign_keys = ON;
+CREATE TABLE users (user_id INTEGER PRIMARY KEY, signup_date TEXT, city_tier TEXT, acquisition_channel TEXT, age_band TEXT);
+CREATE TABLE content (content_id INTEGER PRIMARY KEY, title TEXT, content_type TEXT, genre TEXT, language TEXT, release_year INTEGER, duration_min INTEGER, licensing_cost_index REAL);
+CREATE TABLE subscriptions (subscription_id INTEGER PRIMARY KEY, user_id INTEGER, plan TEXT, monthly_price_inr REAL, start_date TEXT, is_churned INTEGER, tenure_days INTEGER, FOREIGN KEY(user_id) REFERENCES users(user_id));
+CREATE TABLE devices (device_id INTEGER PRIMARY KEY, user_id INTEGER, device_type TEXT, FOREIGN KEY(user_id) REFERENCES users(user_id));
+CREATE TABLE watch_sessions (session_id INTEGER PRIMARY KEY, user_id INTEGER, content_id INTEGER, started_at TEXT, watch_minutes REAL, completion_rate REAL, play_source TEXT, buffering_ratio REAL, FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(content_id) REFERENCES content(content_id));
+CREATE TABLE search_events (search_id INTEGER PRIMARY KEY, user_id INTEGER, searched_at TEXT, is_clicked INTEGER, is_played INTEGER, FOREIGN KEY(user_id) REFERENCES users(user_id));
+CREATE TABLE recommendation_impressions (impression_id INTEGER PRIMARY KEY, user_id INTEGER, content_id INTEGER, impressed_at TEXT, surface TEXT, is_clicked INTEGER, is_played INTEGER, FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(content_id) REFERENCES content(content_id));
+CREATE TABLE payments (payment_id INTEGER PRIMARY KEY, user_id INTEGER, subscription_id INTEGER, payment_date TEXT, amount_inr REAL, payment_status TEXT, FOREIGN KEY(user_id) REFERENCES users(user_id), FOREIGN KEY(subscription_id) REFERENCES subscriptions(subscription_id));
+CREATE TABLE support_events (support_event_id INTEGER PRIMARY KEY, user_id INTEGER, created_at TEXT, issue_type TEXT, resolution_hours REAL, FOREIGN KEY(user_id) REFERENCES users(user_id));
+CREATE INDEX idx_watch_user_time ON watch_sessions(user_id, started_at);
+CREATE INDEX idx_watch_content ON watch_sessions(content_id);

@@ -1,0 +1,4 @@
+horizon_days,eligible_users,retained_users,rolling_retention_rate
+1,10000,9752,0.9752
+7,10000,8321,0.8321
+30,10000,5090,0.509
