@@ -119,7 +119,12 @@ Get-Content .\results\monetisation_by_plan.csv
 - Explicit table grain and PK/FK schema
 - Generated raw CSVs and local SQLite DB are ignored by Git
 - Automated quality checks fail the pipeline if retention is invalid, churn AUC is outside a sensible range, foreign-key violations exist, or expected table counts are wrong
-- Resume/interview metrics should be quoted only from a successful pipeline run
+- Published metrics should be quoted only from a successful pipeline run
+
+
+## Continuous integration
+
+The GitHub Actions workflow runs the full deterministic pipeline on Python 3.11 and then executes three post-run smoke tests. These check output quality flags, simulated event-table counts, and held-out churn-model metric bounds. Passing CI indicates that this synthetic demonstration remains reproducible; it does not establish real-world model performance.
 
 ## Limitations
 
