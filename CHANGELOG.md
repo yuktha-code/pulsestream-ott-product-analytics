@@ -1,6 +1,6 @@
-# V3 finalization notes
+# Technical evolution and reproducibility notes
 
-V3 is the finalized synthetic-behavior generator used by the repository.
+The current implementation uses a deterministic synthetic-behavior generator and a relational analytics pipeline.
 
 Key changes relative to the early prototype:
 - behavior-linked engagement, buffering, support propensity and churn risk

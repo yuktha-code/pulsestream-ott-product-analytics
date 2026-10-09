@@ -72,7 +72,7 @@ The model is a scikit-learn pipeline with `StandardScaler`, `OneHotEncoder` and 
 PulseStream/
 ├── README.md
 ├── DATA_SOURCES.md
-├── V3_NOTES.md
+├── CHANGELOG.md
 ├── requirements.txt
 ├── run_pipeline.py
 ├── data/                  # generated locally; CSV/DB ignored by Git
