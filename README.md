@@ -1,5 +1,7 @@
 # PulseStream — OTT Engagement, Retention & Monetization Analytics
 
+[![Warehouse and analytics smoke tests](https://github.com/yuktha-code/pulsestream-ott-product-analytics/actions/workflows/ci.yml/badge.svg)](https://github.com/yuktha-code/pulsestream-ott-product-analytics/actions/workflows/ci.yml)
+
 PulseStream is an end-to-end OTT product-analytics project built with **Python, SQL, SQLite and scikit-learn**. It simulates a joined streaming-platform warehouse, computes engagement/search/recommendation/retention/monetization KPIs, trains a churn classifier, ranks content-efficiency proxies and runs automated data-quality checks.
 
 > **Data provenance:** all user-level data in this repository is synthetic and generated locally with NumPy seed `42`. This project does **not** use or claim access to JioHotstar, Disney+ Hotstar, Netflix, Prime Video or any other proprietary streaming-platform data.
